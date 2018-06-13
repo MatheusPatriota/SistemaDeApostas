@@ -9,10 +9,12 @@ public class Operacoes {
 	private HashMap<Integer, ArrayList<String>> mapaDeApostas = new HashMap<>();
 	private ArrayList<String> arrayDeApostas = new ArrayList<>();
 	private String dadosAposta ="";
-	private int caixa;
-	private double taxa;
-	private int rateioCenario;
-	
+	private int caixa = 0;
+	private double taxa = 0;
+	private int rateioCenario = 0;
+	private int numeracaoDoCenario = 1;
+
+
 	
 	public Operacoes() {
 		
@@ -28,13 +30,15 @@ public class Operacoes {
 	public void cadastrarCenario(String descricao) {
 		
 		Cenario cenario = new Cenario(descricao);
-		mapaDeCenarios.put(cenario.getNumeracaoDoCenario(), cenario);
+		mapaDeCenarios.put(numeracaoDoCenario, cenario);
+		cenario.setNumeracaoDoCenario(this.numeracaoDoCenario);
+		numeracaoDoCenario++;
 		
 	}
 	
-	public void exibirCenario(int numeracaoCenario) {
+	public Cenario exibirCenario(int numeracaoCenario) {
 		
-		System.out.println( mapaDeCenarios.get(numeracaoCenario));
+		return mapaDeCenarios.get(numeracaoCenario);
 
 	}
 	
@@ -51,17 +55,16 @@ public class Operacoes {
 	
 	public void cadastrarApostas(int numeracaoCenario, String apostador, int valor, String previsao) {
 		
-		
+
 		dadosAposta = apostador + " - " + valor + " - " + previsao;
 		arrayDeApostas.add(dadosAposta);
 		mapaDeApostas.put(numeracaoCenario, arrayDeApostas);
-		
-				
+
 	}
 	
 	public int valorTotalDeApostas(int posicaoCenario) {
 		
-		return mapaDeApostas.get(posicaoCenario).size();
+		return 0;
 	}
 	
 	public void totalDeApostas() {
