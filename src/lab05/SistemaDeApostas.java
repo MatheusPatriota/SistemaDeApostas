@@ -10,10 +10,11 @@ public class SistemaDeApostas {
 		/**
 		 *  Operacoes realacionadas a Cenario
 		 */
-		operacao.cadastrarCenario("aaa");
-		operacao.cadastrarCenario("ccc");
-		operacao.cadastrarCenario("ddd");
+		operacao.cadastrarCenario("RED vai ganhar o CBLOL");
+		operacao.cadastrarCenario("RED vai ganhar da Kabum");
+		operacao.cadastrarCenario("RED vai ganhar o mundial ");
 		System.out.println(operacao.exibirCenario(1));
+		System.out.println();
 		System.out.println(operacao.listarCenarios());
 		
 		/**
@@ -24,6 +25,7 @@ public class SistemaDeApostas {
 		operacao.cadastrarApostas(1, "Matheus Patriota", 50, "Vai acontecer!");
 		operacao.cadastrarApostas(2, "Matheus Patriota", 50, "Vai acontecer!");
 		System.out.println(operacao.valorTotalDeApostas(1));
+		System.out.println(operacao.exibeApostas(2));
 	}
 
 }

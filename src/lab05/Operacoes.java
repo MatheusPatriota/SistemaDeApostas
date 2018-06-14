@@ -1,18 +1,15 @@
 package lab05;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+
 
 public class Operacoes {
 
-	private HashMap<Integer, Cenario> mapaDeCenarios = new HashMap<>();
-	private HashMap<Integer, ArrayList<String>> mapaDeApostas = new HashMap<>();
-	private ArrayList<String> arrayDeApostas = new ArrayList<>();
-	private String dadosAposta ="";
+	private ArrayList<Cenario> cenarios = new ArrayList<>();
 	private int caixa = 0;
 	private double taxa = 0;
 	private int rateioCenario = 0;
-	private int numeracaoDoCenario = 1;
+	private int totalDeApostas = 0;
 
 
 	
@@ -30,24 +27,22 @@ public class Operacoes {
 	public void cadastrarCenario(String descricao) {
 		
 		Cenario cenario = new Cenario(descricao);
-		mapaDeCenarios.put(numeracaoDoCenario, cenario);
-		cenario.setNumeracaoDoCenario(this.numeracaoDoCenario);
-		numeracaoDoCenario++;
+		cenarios.add(cenario);
 		
 	}
 	
 	public Cenario exibirCenario(int numeracaoCenario) {
 		
-		return mapaDeCenarios.get(numeracaoCenario);
+		return cenarios.get(numeracaoCenario);
 
 	}
 	
 	public String listarCenarios() {
 		
 		String listaDeCenarios = "";
-		for (int i = 0; i < mapaDeCenarios.size(); i++) {
+		for (int i = 0; i < cenarios.size(); i++) {
 			
-			listaDeCenarios += mapaDeCenarios.get(i+1) + System.lineSeparator();
+			listaDeCenarios += i+1 + " - " + cenarios.get(i) + System.lineSeparator();
 		}
 		
 		return listaDeCenarios;
@@ -55,11 +50,9 @@ public class Operacoes {
 	
 	public void cadastrarApostas(int numeracaoCenario, String apostador, int valor, String previsao) {
 		
-
-		dadosAposta = apostador + " - " + valor + " - " + previsao;
-		arrayDeApostas.add(dadosAposta);
-		mapaDeApostas.put(numeracaoCenario, arrayDeApostas);
-
+		cenarios.get(numeracaoCenario).cadastrarApostas(apostador, valor, previsao);
+		totalDeApostas ++;
+		
 	}
 	
 	public int valorTotalDeApostas(int posicaoCenario) {
@@ -67,11 +60,20 @@ public class Operacoes {
 		return 0;
 	}
 	
-	public void totalDeApostas() {
+	public int totalDeApostas() {
 		
+		return totalDeApostas;
 	}
 	
-	public void exibeApostas(int Cenario) {
+	public String exibeApostas(int numeracaoCenario) {
+		
+		String exibindoApostas = "";
+		
+		for (int i = 0; i < cenarios.size(); i++) {
+			
+			exibindoApostas += cenarios.get(i);
+		}
+		return exibindoApostas;
 		
 	}
 	
