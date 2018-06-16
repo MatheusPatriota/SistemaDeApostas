@@ -5,7 +5,7 @@ public class SistemaDeApostas {
 	public static void main(String[] args) {
 		
 		
-		Operacoes operacao = new Operacoes();
+		OperacoesFacade operacao = new OperacoesFacade();
 		operacao.inicializarSistema(100000, 0.01);
 		/**
 		 *  Operacoes realacionadas a Cenario

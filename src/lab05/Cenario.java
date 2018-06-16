@@ -1,3 +1,9 @@
+/**
+* Laboratorio de Programacao 2 - Lab 5
+*
+* @author Matheus da Silva Coimbra Patriota - 117210391
+*/
+
 package lab05;
 
 import java.util.ArrayList;
@@ -13,7 +19,11 @@ public class Cenario {
 	private int ganhadores;
 	private int caixaCenario;
 	
-	
+	/**
+	 * Construtor da classe Cenario responsavel por iniciar a classe e seus atributos.
+	 * 
+	 * @param descricao - Descricao do cenario possivel
+	 */
 	public Cenario(String descricao) {
 		
 		this.descricao = descricao;
@@ -25,6 +35,14 @@ public class Cenario {
 		this.caixaCenario = 0;
 	}
 	
+	/**
+	 * metodo responsavel por cadastrar apostas recebendo como parametro
+	 * apostador, valor e previsao. 
+	 * 
+	 * @param apostador - Nome de quem esta apostando.
+	 * @param valor - Valor da aposta a ser feita.
+	 * @param previsao - Prever se o cenario vai acontecer ou nao.
+	 */
 	public void cadastrarApostas(String apostador, int valor, String previsao) {
 		
 		Apostas aposta = new Apostas(apostador, valor, previsao);
@@ -74,7 +92,11 @@ public class Cenario {
 		this.valorTotalApostas += valorTotalApostas;
 	}
 	
-	
+	/**
+	 * toString para padronizar a exibicao da classe Cenario utilizando descricao e status.
+	 * 
+	 * @return - Retorna uma representacao em String da classe Cenario
+	 */
 	@Override
 	public String toString() {
 		
