@@ -13,6 +13,14 @@ public class Apostas {
 		this.previsao = previsao;
 	}
 	
+	public String getPrevisao() {
+		return previsao;
+	}
+	
+	public int getValor() {
+		return valor;
+	}
+	
 	@Override
 	public String toString() {
 		
