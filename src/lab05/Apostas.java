@@ -22,6 +22,31 @@ public class Apostas {
 	 */
 	public Apostas(String apostador, int valor, String previsao) {
 		
+		if (apostador.equals(null)) {
+			
+			throw new NullPointerException("Nome do apostador Nulo");
+		}
+		
+		if (previsao.equals(null)) {
+			
+			throw new NullPointerException("Previsao da aposta está Nula!");
+		}
+		
+		if (valor < 0) {
+			
+			throw new IllegalArgumentException("Valor negativo não!");
+		}
+		
+		if (apostador.equals("")) {
+			
+			throw new IllegalArgumentException("Nome do apostador Vazio!");
+		}
+		
+		if (previsao.equals("")) {
+			
+			throw new IllegalArgumentException("Previsao para a aposta está Vazia!");
+		}
+		
 		this.valor = valor;
 		this.apostador = apostador;
 		this.previsao = previsao;

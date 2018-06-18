@@ -13,7 +13,7 @@ public class SistemaDeApostas {
 		operacao.cadastrarCenario("RED vai ganhar o CBLOL");
 		operacao.cadastrarCenario("RED vai ganhar da Kabum");
 		operacao.cadastrarCenario("RED vai ganhar o mundial ");
-		System.out.println(operacao.exibirCenario(3));
+		System.out.println(operacao.exibirCenario(2));
 		System.out.println();
 		System.out.println(operacao.listarCenarios());
 		

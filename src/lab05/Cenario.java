@@ -26,6 +26,15 @@ public class Cenario {
 	 */
 	public Cenario(String descricao) {
 		
+		if (descricao.equals(null)) {
+			
+			throw new NullPointerException("Descrição nula!");
+		}
+		if (descricao.equals("")) {
+			
+			throw new IllegalArgumentException("Descrição Vazia!");
+		}
+		
 		this.descricao = descricao;
 		this.status = "Não finalizado";
 		this.arrayDeApostas = new ArrayList<>();

@@ -40,6 +40,17 @@ public class OperacoesController {
 	 */
 	public void inicializarSistema(int caixa, double taxa) {
 		
+		if (caixa < 0) {
+			
+			throw new IllegalArgumentException("Caixa não pode ser negativo!");
+		}
+		
+		if (taxa  <= 0) {
+			
+			
+			throw new IllegalArgumentException("Taxa não pode ser menor ou igual a zero!");
+		}
+		
 		this.caixa = caixa;
 		this.taxa = taxa;
 ;
@@ -69,7 +80,6 @@ public class OperacoesController {
 	public String exibirCenario(int numeracaoCenario) {
 		
 		return numeracaoCenario + " - " + cenarios.get(numeracaoCenario-1);
-
 	}
 	
 	/**
@@ -214,6 +224,10 @@ public class OperacoesController {
 	public int getCaixa() {
 		
 		return caixa;
+	}
+	
+	public double getTaxa() {
+		return taxa;
 	}
 	
 }
