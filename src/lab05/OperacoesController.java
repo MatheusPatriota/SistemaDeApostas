@@ -42,13 +42,13 @@ public class OperacoesController {
 		
 		if (caixa < 0) {
 			
-			throw new IllegalArgumentException("Caixa não pode ser negativo!");
+			throw new IllegalArgumentException("Erro na inicializacao: Caixa nao pode ser inferior a 0");
 		}
 		
 		if (taxa  <= 0) {
 			
 			
-			throw new IllegalArgumentException("Taxa não pode ser menor ou igual a zero!");
+			throw new IllegalArgumentException("Erro na inicializacao: Taxa nao pode ser inferior a 0");
 		}
 		
 		this.caixa = caixa;
@@ -78,6 +78,12 @@ public class OperacoesController {
 	 * @return - Retorna uma String que representa o cenario escolhido.
 	 */
 	public String exibirCenario(int numeracaoCenario) {
+		
+		if (numeracaoCenario < 0) {
+			
+			throw new IllegalArgumentException("Erro na consulta de cenario: Cenario invalido");
+		}
+		
 		
 		return numeracaoCenario + " - " + cenarios.get(numeracaoCenario-1);
 	}

@@ -28,15 +28,15 @@ public class Cenario {
 		
 		if (descricao.equals(null)) {
 			
-			throw new NullPointerException("Descrição nula!");
+			throw new NullPointerException("Erro no cadastro de cenario: Descricao nao pode ser nula");
 		}
 		if (descricao.equals("")) {
 			
-			throw new IllegalArgumentException("Descrição Vazia!");
+			throw new IllegalArgumentException("Erro no cadastro de cenario: Descricao nao pode ser vazia");
 		}
 		
 		this.descricao = descricao;
-		this.status = "Não finalizado";
+		this.status = "Nao finalizado";
 		this.arrayDeApostas = new ArrayList<>();
 		this.valorTotalApostas = 0;
 		this.totalDeApostas = 0;

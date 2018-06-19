@@ -1,7 +1,16 @@
 package lab05;
 
-public class OperacoesFacade {
+import easyaccept.EasyAccept;
 
+public class OperacoesFacade {
+	
+	public static void main(String[] args) {
+		
+		args = new String[] {"lab05.OperacoesFacade","acceptance_test/us1_test.txt", "acceptance_test/us2_test.txt"};
+		EasyAccept.main(args);
+	}
+	
+	
 	OperacoesController operacao;
 	
 	public OperacoesFacade() {
@@ -9,7 +18,7 @@ public class OperacoesFacade {
 		this.operacao = new OperacoesController();
 	}
 	
-	public void inicializarSistema(int caixa, double taxa) {
+	public void inicializa(int caixa, double taxa) {
 		
 		operacao.inicializarSistema(caixa, taxa);
 	}

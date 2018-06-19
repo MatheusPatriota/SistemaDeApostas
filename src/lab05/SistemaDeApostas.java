@@ -6,7 +6,7 @@ public class SistemaDeApostas {
 		
 		
 		OperacoesFacade operacao = new OperacoesFacade();
-		operacao.inicializarSistema(100000, 0.01);
+		operacao.inicializa(100000, 0.01);
 		/**
 		 *  Operacoes realacionadas a Cenario
 		 */
