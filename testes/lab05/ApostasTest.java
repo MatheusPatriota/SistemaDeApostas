@@ -16,7 +16,6 @@ public class ApostasTest {
 		aposta = new Apostas("", 20, "VAI ACONTECER");
 	}
 	
-	
 	@Test(expected=IllegalArgumentException.class)
 	public void testPrevisaoVazia() {
 		

@@ -57,7 +57,7 @@ public class CenarioTest {
 	public void testToString() {
 		
 		cenario = new Cenario("RED Não vai ser rebaixada pro circuitão");
-		assertEquals("1 - RED Não vai ser rebaixada pro circuitão - Não finalizado", cenario.toString());
+		assertEquals("RED Não vai ser rebaixada pro circuitão - Nao finalizado", cenario.toString());
 	}
 	
 	

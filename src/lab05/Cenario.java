@@ -16,7 +16,7 @@ public class Cenario {
 	private ArrayList<Apostas> arrayDeApostas;
 	private int valorTotalApostas;
 	private int totalDeApostas;
-	private int ganhadores;
+	private int rateioCenario;
 	private int caixaCenario;
 	
 	/**
@@ -30,6 +30,7 @@ public class Cenario {
 			
 			throw new NullPointerException("Erro no cadastro de cenario: Descricao nao pode ser nula");
 		}
+		
 		if (descricao.equals("")) {
 			
 			throw new IllegalArgumentException("Erro no cadastro de cenario: Descricao nao pode ser vazia");
@@ -40,8 +41,8 @@ public class Cenario {
 		this.arrayDeApostas = new ArrayList<>();
 		this.valorTotalApostas = 0;
 		this.totalDeApostas = 0;
-		this.ganhadores = 0;
 		this.caixaCenario = 0;
+		this.rateioCenario = 0;
 	}
 	
 	/**
@@ -56,8 +57,15 @@ public class Cenario {
 		
 		Apostas aposta = new Apostas(apostador, valor, previsao);
 		arrayDeApostas.add(aposta);
-		
-		
+				
+	}
+	
+	public int getRateioCenario() {
+		return rateioCenario;
+	}
+	
+	public String getStatus() {
+		return status;
 	}
 	
 	public int getCaixaCenario() {
@@ -66,10 +74,6 @@ public class Cenario {
 	
 	public int getTotalDeApostas() {
 		return totalDeApostas;
-	}
-	
-	public int getGanhadores() {
-		return ganhadores;
 	}
 	
 	public ArrayList<Apostas> getArrayDeApostas() {
@@ -88,10 +92,6 @@ public class Cenario {
 		this.totalDeApostas ++;
 	}
 	
-	public void setPerdedores() {
-		this.ganhadores ++;
-	}
-	
 	public void setStatus(String status) {
 		this.status = status;
 	}
@@ -99,6 +99,10 @@ public class Cenario {
 	public void setValorTotalApostas(int valorTotalApostas) {
 		
 		this.valorTotalApostas += valorTotalApostas;
+	}
+	
+	public void setRateioCenario(int rateioCenario) {
+		this.rateioCenario += rateioCenario;
 	}
 	
 	/**

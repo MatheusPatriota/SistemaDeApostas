@@ -22,29 +22,34 @@ public class Apostas {
 	 */
 	public Apostas(String apostador, int valor, String previsao) {
 		
-		if (apostador.equals(null)) {
+		if (apostador.equals(null) || apostador.equals("")) {
 			
-			throw new NullPointerException("Nome do apostador Nulo");
+			throw new IllegalArgumentException("Erro no cadastro de aposta: Apostador nao pode ser vazio ou nulo");
 		}
 		
-		if (previsao.equals(null)) {
+		if (valor <= 0) {
 			
-			throw new NullPointerException("Previsao da aposta está Nula!");
+			throw new IllegalArgumentException("Erro no cadastro de aposta: Valor nao pode ser menor ou igual a zero");
 		}
 		
-		if (valor < 0) {
+		if (apostador.equals("  ")) {
 			
-			throw new IllegalArgumentException("Valor negativo não!");
+			throw new IllegalArgumentException("Erro no cadastro de aposta: Apostador nao pode ser vazio ou nulo");
 		}
 		
-		if (apostador.equals("")) {
+		if (previsao.equals("   ")) {
 			
-			throw new IllegalArgumentException("Nome do apostador Vazio!");
+			throw new IllegalArgumentException("Erro no cadastro de aposta: Previsao nao pode ser vazia ou nula");
 		}
 		
-		if (previsao.equals("")) {
+		if (previsao.equals("") || previsao.equals(null)) {
 			
-			throw new IllegalArgumentException("Previsao para a aposta está Vazia!");
+			throw new IllegalArgumentException("Erro no cadastro de aposta: Previsao nao pode ser vazia ou nula");
+		}
+		
+		if (!(previsao.equals("VAI ACONTECER") || previsao.equals("N VAI ACONTECER"))) {
+			
+			throw new IllegalArgumentException("Erro no cadastro de aposta: Previsao invalida");
 		}
 		
 		this.valor = valor;

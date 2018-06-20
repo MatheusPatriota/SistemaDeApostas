@@ -6,7 +6,7 @@ public class SistemaDeApostas {
 		
 		
 		OperacoesFacade operacao = new OperacoesFacade();
-		operacao.inicializa(100000, 0.01);
+		operacao.inicializa(10000, 0.01);
 		/**
 		 *  Operacoes realacionadas a Cenario
 		 */
@@ -20,22 +20,24 @@ public class SistemaDeApostas {
 		/**
 		 * Operacoes relacionadas a Aposta
 		 */
-		operacao.cadastrarApostas(1, "Matheus Patriota", 50, "VAI ACONTECER");
-		operacao.cadastrarApostas(1, "Matheus Patriota", 50, "N VAI ACONTECER");
-		operacao.cadastrarApostas(2, "Matheus Patriota", 50, "N VAI ACONTECER");
-		operacao.cadastrarApostas(2, "Matheus Patriota", 20, "VAI ACONTECER");
-		operacao.cadastrarApostas(2, "Matheus Patriota", 30, "VAI ACONTECER");
-		operacao.cadastrarApostas(2, "Matheus Patriota", 10, "VAI ACONTECER");
-		System.out.println(operacao.valorTotalDeApostas(2));
+		operacao.cadastrarAposta(1, "Matheus Patriota", 10000, "VAI ACONTECER");
+		operacao.cadastrarAposta(1, "Matheus Patriota", 50, "N VAI ACONTECER");
+		operacao.cadastrarAposta(2, "Matheus Patriota", 50, "VAI ACONTECER");
+		operacao.cadastrarAposta(2, "Matheus Patriota", 10000, "N VAI ACONTECER");
+		System.out.println(operacao.valorTotalDeApostas(1));
 		System.out.println();
-		System.out.println(operacao.totalDeApostas(2));
+		System.out.println(operacao.totalDeApostas(1));
 		System.out.println();
-		System.out.println(operacao.exibeApostas(2));
-		operacao.fecharAposta(2, false);
+		System.out.println(operacao.exibeApostas(1));
+		operacao.fecharAposta(1, false);
+		operacao.fecharAposta(2, true);
+		System.out.println(operacao.getCaixa());
+		System.out.println(operacao.getCaixaCenario(1));
+		System.out.println(operacao.getTotalRateioCenario(1));
+		System.out.println();
 		System.out.println(operacao.getCaixa());
 		System.out.println(operacao.getCaixaCenario(2));
 		System.out.println(operacao.getTotalRateioCenario(2));
-		System.out.println(operacao.exibirCenario(2));
 		
 	}
 

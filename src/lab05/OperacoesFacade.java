@@ -6,10 +6,10 @@ public class OperacoesFacade {
 	
 	public static void main(String[] args) {
 		
-		args = new String[] {"lab05.OperacoesFacade","acceptance_test/us1_test.txt", "acceptance_test/us2_test.txt"};
+		args = new String[] {"lab05.OperacoesFacade","acceptance_test/us1_test.txt", "acceptance_test/us2_test.txt",
+		"acceptance_test/us3_test.txt",	"acceptance_test/us4_test.txt"};
 		EasyAccept.main(args);
 	}
-	
 	
 	OperacoesController operacao;
 	
@@ -38,7 +38,7 @@ public class OperacoesFacade {
 		return operacao.listarCenarios();
 	}
 	
-	public void cadastrarApostas(int numeracaoCenario, String apostador, int valor, String previsao) {
+	public void cadastrarAposta(int numeracaoCenario, String apostador, int valor, String previsao) {
 		
 		operacao.cadastrarApostas(numeracaoCenario, apostador, valor, previsao);
 	}

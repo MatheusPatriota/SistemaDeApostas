@@ -100,7 +100,7 @@ public class OperacoesControllerTest {
 	public void testExibirCenarioValido() {
 
 		operacao.cadastrarCenario("RED Não vai ser rebaixada pro circuitão");
-		assertEquals("1 - RED Não vai ser rebaixada pro circuitão - Não finalizado", operacao.exibirCenario(1));
+		assertEquals("1 - RED Não vai ser rebaixada pro circuitão - Nao finalizado", operacao.exibirCenario(1));
 	}
 	
 	@Test(expected=IndexOutOfBoundsException.class)
@@ -114,7 +114,7 @@ public class OperacoesControllerTest {
 	public void testListarCenarios() {
 
 		operacao.cadastrarCenario("RED vai ganhar o CBLOL");
-		assertEquals("1 - RED vai ganhar o CBLOL - Não finalizado" + System.lineSeparator(), operacao.listarCenarios());
+		assertEquals("1 - RED vai ganhar o CBLOL - Nao finalizado" + System.lineSeparator(), operacao.listarCenarios());
 	}
 	
 	@Test
@@ -152,11 +152,5 @@ public class OperacoesControllerTest {
 		operacao.fecharAposta(1, true);
 
 	}
-	
-	
-	
-	
-	
-	
 	
 }
